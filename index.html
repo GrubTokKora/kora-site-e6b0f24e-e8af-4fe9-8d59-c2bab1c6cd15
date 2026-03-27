@@ -1,389 +1,1108 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skin Clinic NY – Advanced Skin Care & Permanent Cosmetics in Tuckahoe, NY</title>
-  <meta name="description" content="Discover advanced permanent cosmetics and expert skin care at Skin Clinic NY in Tuckahoe. We offer a range of treatments to enhance your natural beauty. Book your appointment today.">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="Skin Clinic NY – Advanced Skin Care & Permanent Cosmetics in Tuckahoe, NY">
-  <meta property="og:description" content="Discover advanced permanent cosmetics and expert skin care at Skin Clinic NY in Tuckahoe. We offer a range of treatments to enhance your natural beauty. Book your appointment today.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop">
-  <meta property="og:url" content="https://skinclinicny.com/">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://skinclinicny.com/">
-
-  <!-- Hero image preload -->
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop">
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HealthAndBeautyBusiness",
-    "name": "Skin Clinic NY",
-    "description": "Skin Clinic — advanced permanent cosmetics and skin care in Tuckahoe, NY.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "69 Main St",
-      "addressLocality": "Tuckahoe",
-      "addressRegion": "NY",
-      "postalCode": "10707",
-      "addressCountry": "US"
-    },
-    "telephone": "+1-914-771-7546",
-    "openingHours": [
-      "Mo-Sa 09:00-17:30"
-    ],
-    "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop",
-    "url": "https://skinclinicny.com/"
-  }
-  </script>
-
-  <!-- Tailwind + Fonts -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'brand-primary': '#EAE0D5',
-            'brand-secondary': '#C6AC8F',
-            'brand-dark': '#594545',
-            'brand-light': '#F9F5F0',
-          },
-          fontFamily: {
-            'serif': ['Playfair Display', 'serif'],
-            'sans': ['Plus Jakarta Sans', 'sans-serif'],
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Skin Clinic</title>
+    <meta name="description" content="Welcome to Skin Clinic NY, where artistry meets precision in the world of permanent makeup.">
+    <link rel="canonical" href="https://skinclinicny.com/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Home - Skin Clinic">
+    <meta property="og:description" content="Welcome to Skin Clinic NY, where artistry meets precision in the world of permanent makeup.">
+    <meta property="og:url" content="https://skinclinicny.com/">
+    <meta property="og:image" content="https://skinclinicny.com/wp-content/uploads/2024/10/Logo-Web-2.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Corinthia&family=Montserrat:wght@400;500;700&family=Noto+Serif+Display:wght@500&family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-gold': '#e3caa7',
+                        'brand-gold-dark': '#af8257',
+                        'brand-warm': '#665c5b',
+                        'brand-dark': '#0D0D0D',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'open-sans': ['Open Sans', 'sans-serif'],
+                        'playfair': ['Playfair Display', 'serif'],
+                        'noto-serif': ['Noto Serif Display', 'serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'baskervville': ['Baskervville', 'serif'],
+                        'corinthia': ['Corinthia', 'cursive'],
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-  <style>
-    body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Playfair Display', serif;
-    }
-  </style>
-</head>
-<body class="bg-brand-light text-brand-dark">
-
-  <!-- Kora Config -->
-  <script>
-    window.KORA_SITE_CONFIG = {
-      apiBaseUrl: "https://api.usekora.com", // Placeholder
-      businessId: "e6b0f24e-e8af-4fe9-8d59-c2bab1c6cd15",
-      recaptchaSiteKey: "" // IMPORTANT: Add your Google reCAPTCHA v2 Site Key here
-    };
-  </script>
-
-  <!-- Header -->
-  <header class="absolute top-0 left-0 right-0 z-10 bg-transparent text-white">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="/" class="text-2xl font-serif font-bold">Skin Clinic NY</a>
-      <nav class="hidden md:flex space-x-8 items-center">
-        <a href="#services" class="hover:text-brand-primary transition-colors">Services</a>
-        <a href="#about" class="hover:text-brand-primary transition-colors">About</a>
-        <a href="#contact" class="hover:text-brand-primary transition-colors">Contact</a>
-        <a href="tel:914-771-7546" class="bg-brand-secondary text-brand-dark px-6 py-2 rounded-full hover:bg-opacity-90 transition-colors">Book Now</a>
-      </nav>
-      <button id="mobile-menu-button" class="md:hidden">
-        <i data-lucide="menu"></i>
-      </button>
-    </div>
-  </header>
-  
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden fixed inset-0 bg-brand-dark bg-opacity-95 z-50 flex flex-col items-center justify-center text-white">
-      <button id="close-mobile-menu" class="absolute top-6 right-6">
-          <i data-lucide="x" class="w-8 h-8"></i>
-      </button>
-      <nav class="flex flex-col space-y-8 text-2xl text-center">
-          <a href="#services" class="mobile-menu-link hover:text-brand-primary transition-colors">Services</a>
-          <a href="#about" class="mobile-menu-link hover:text-brand-primary transition-colors">About</a>
-          <a href="#contact" class="mobile-menu-link hover:text-brand-primary transition-colors">Contact</a>
-          <a href="tel:914-771-7546" class="mt-8 bg-brand-secondary text-brand-dark px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors">Book Now</a>
-      </nav>
-  </div>
-
-  <main>
-    <!-- Hero Section -->
-    <section class="relative h-screen min-h-[600px] flex items-center justify-center text-white">
-      <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
-      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop" 
-           alt="A serene clinic environment with skincare products." 
-           class="absolute inset-0 w-full h-full object-cover"
-           loading="eager" fetchpriority="high" decoding="async" width="2070" height="1380">
-      <div class="relative z-10 text-center px-4">
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-4 leading-tight">Advanced Skin Care & Permanent Cosmetics</h1>
-        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-brand-primary">Enhancing your natural beauty in the heart of Tuckahoe, NY.</p>
-        <a href="#contact" class="bg-brand-secondary text-brand-dark px-10 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-transform transform hover:scale-105">Book an Appointment</a>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 lg:py-32 bg-white">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <img src="https://images.unsplash.com/photo-1620916566398-39f1686d707d?q=80&w=1964&auto=format&fit=crop" 
-                     alt="A professional esthetician providing a facial treatment."
-                     class="rounded-lg shadow-xl w-full h-auto object-cover"
-                     loading="lazy" decoding="async" width="1964" height="2946">
-            </div>
-            <div class="text-center md:text-left">
-                <h2 class="text-3xl md:text-4xl font-serif mb-6">Welcome to Skin Clinic NY</h2>
-                <p class="text-gray-600 leading-relaxed mb-4">
-                    At Skin Clinic NY, we are dedicated to providing advanced permanent cosmetics and state-of-the-art skin care solutions. Located in Tuckahoe, our clinic offers a serene and professional environment where your beauty and wellness are our top priorities.
-                </p>
-                <p class="text-gray-600 leading-relaxed">
-                    Our expert technicians use the latest techniques and highest quality products to deliver personalized treatments that yield beautiful, lasting results. We believe in enhancing your unique features and helping you feel confident in your own skin.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 lg:py-32 bg-brand-light">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-serif mb-4">Our Signature Services</h2>
-        <p class="max-w-2xl mx-auto text-gray-600 mb-12">Tailored treatments designed to rejuvenate and enhance your natural beauty.</p>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="bg-white p-8 rounded-lg shadow-md text-center">
-            <div class="flex justify-center mb-4">
-              <div class="bg-brand-primary p-4 rounded-full">
-                <i data-lucide="sparkles" class="text-brand-dark"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-serif font-semibold mb-2">Permanent Cosmetics</h3>
-            <p class="text-gray-600 text-sm">Expertly applied eyebrows, eyeliner, and lip color for effortless, lasting beauty.</p>
-          </div>
-          <div class="bg-white p-8 rounded-lg shadow-md text-center">
-            <div class="flex justify-center mb-4">
-              <div class="bg-brand-primary p-4 rounded-full">
-                <i data-lucide="smile" class="text-brand-dark"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-serif font-semibold mb-2">Advanced Facials</h3>
-            <p class="text-gray-600 text-sm">Customized treatments to cleanse, hydrate, and revitalize your skin for a radiant glow.</p>
-          </div>
-          <div class="bg-white p-8 rounded-lg shadow-md text-center">
-            <div class="flex justify-center mb-4">
-              <div class="bg-brand-primary p-4 rounded-full">
-                <i data-lucide="sun" class="text-brand-dark"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-serif font-semibold mb-2">Skin Rejuvenation</h3>
-            <p class="text-gray-600 text-sm">Target fine lines, sun damage, and uneven texture with our modern therapies.</p>
-          </div>
-          <div class="bg-white p-8 rounded-lg shadow-md text-center">
-            <div class="flex justify-center mb-4">
-              <div class="bg-brand-primary p-4 rounded-full">
-                <i data-lucide="droplets" class="text-brand-dark"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-serif font-semibold mb-2">Microneedling</h3>
-            <p class="text-gray-600 text-sm">Stimulate collagen production for smoother, firmer, and more youthful-looking skin.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact & Booking Section -->
-    <section id="contact" class="py-20 lg:py-32 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-serif mb-4">Schedule Your Consultation</h2>
-          <p class="max-w-2xl mx-auto text-gray-600">Reach out to us to book an appointment or to ask any questions you may have.</p>
-        </div>
-        <div class="grid lg:grid-cols-2 gap-12">
-          <div class="bg-brand-light p-8 rounded-lg">
-            <h3 class="text-2xl font-serif mb-6">Contact Information</h3>
-            <div class="space-y-4 text-gray-700">
-              <div class="flex items-start">
-                <i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-1 text-brand-secondary"></i>
-                <span>69 Main St, Tuckahoe, NY 10707, United States</span>
-              </div>
-              <div class="flex items-start">
-                <i data-lucide="phone" class="w-5 h-5 mr-3 mt-1 text-brand-secondary"></i>
-                <a href="tel:914-771-7546" class="hover:text-brand-secondary">914-771-7546</a>
-              </div>
-            </div>
-            <h3 class="text-2xl font-serif mt-8 mb-4">Opening Hours</h3>
-            <ul class="space-y-2 text-gray-700">
-              <li><strong>Monday - Saturday:</strong> 9:00 AM – 5:30 PM</li>
-              <li><strong>Sunday:</strong> Closed</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="text-2xl font-serif mb-6">Send Us a Message</h3>
-            <form id="contact-form" novalidate>
-              <div class="mb-4">
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-secondary focus:border-brand-secondary">
-              </div>
-              <div class="mb-4">
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-secondary focus:border-brand-secondary">
-              </div>
-              <div class="mb-4">
-                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-secondary focus:border-brand-secondary"></textarea>
-              </div>
-              <div id="recaptcha-container" class="mb-4">
-                <!-- reCAPTCHA will be inserted here by JS -->
-              </div>
-              <button type="submit" class="w-full bg-brand-dark text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-colors">Send Message</button>
-              <p id="form-message" class="mt-4 text-sm text-center"></p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-brand-dark text-brand-primary py-12">
-    <div class="container mx-auto px-6 text-center">
-      <p class="font-serif text-xl mb-2">Skin Clinic NY</p>
-      <p class="text-sm mb-4">69 Main St, Tuckahoe, NY 10707 | 914-771-7546</p>
-      <p class="text-xs text-gray-400">&copy; <span id="year"></span> Skin Clinic NY. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    lucide.createIcons();
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile Menu Toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.remove('hidden');
-    });
-
-    closeMobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-    });
-
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-    });
-  </script>
-  
-  <!-- reCAPTCHA script -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-  <!-- Form Submission Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('contact-form');
-      const formMessage = document.getElementById('form-message');
-      const recaptchaContainer = document.getElementById('recaptcha-container');
-      const cfg = window.KORA_SITE_CONFIG || {};
-
-      if (!cfg.recaptchaSiteKey) {
-        recaptchaContainer.innerHTML = '<p class="text-sm text-red-600">The contact form is temporarily unavailable. Please call us instead.</p>';
-        form.querySelector('button[type="submit"]').disabled = true;
-        return;
-      } else {
-        const recaptchaDiv = document.createElement('div');
-        recaptchaDiv.className = 'g-recaptcha';
-        recaptchaDiv.setAttribute('data-sitekey', cfg.recaptchaSiteKey);
-        recaptchaContainer.appendChild(recaptchaDiv);
-      }
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const name = form.elements.name.value.trim();
-        const email = form.elements.email.value.trim();
-        const message = form.elements.message.value.trim();
-        const captchaToken = typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
-
-        formMessage.textContent = '';
-        formMessage.className = 'mt-4 text-sm text-center';
-
-        if (!name || !email || !message) {
-          formMessage.textContent = 'Please fill out all fields.';
-          formMessage.classList.add('text-red-600');
-          return;
-        }
-
-        if (!/^\S+@\S+\.\S+$/.test(email)) {
-          formMessage.textContent = 'Please enter a valid email address.';
-          formMessage.classList.add('text-red-600');
-          return;
+    </script>
+    
+    <style>
+        /* Custom styles for things Tailwind can't express easily */
+        .hero-bg {
+            background-image: url('https://skinclinicny.com/wp-content/uploads/2024/11/Hero-Black-with-abstract-design-2.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         
-        if (!captchaToken) {
-          formMessage.textContent = 'Please complete the CAPTCHA.';
-          formMessage.classList.add('text-red-600');
-          return;
+        .sparkles-overlay {
+            background-image: url('https://skinclinicny.com/wp-content/uploads/2024/11/Sparkles-back2.png');
+            background-size: cover;
+            background-position: center;
+            pointer-events: none;
         }
-
-        const apiBaseUrl = (cfg.apiBaseUrl || '').replace(/\/+$/, '');
-        const businessId = cfg.businessId;
-
-        if (!apiBaseUrl || !businessId) {
-          formMessage.textContent = 'Form submission is not configured correctly.';
-          formMessage.classList.add('text-red-600');
-          return;
+        
+        .contact-bg {
+            background-image: url('https://skinclinicny.com/wp-content/uploads/2024/10/contact-inf-800x800-1.jpg');
+            background-size: cover;
+            background-position: center;
         }
+        
+        /* FAQ Accordion styles */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-content.open {
+            max-height: 500px;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-icon.open {
+            transform: rotate(45deg);
+        }
+        
+        /* Testimonial slider */
+        .testimonial-slider {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .testimonial-slide {
+            scroll-snap-align: center;
+        }
+        
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Logo visibility toggle */
+        .logo-hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Header transition */
+        .header-scrolled {
+            background-color: #000;
+            box-shadow: 0 3px 45px rgba(0,0,0,0.15);
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        /* Search overlay */
+        .search-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .search-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Service card hover */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Custom scrollbar for testimonials */
+        .testimonial-slider::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .testimonial-slider {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            
+            .faq-content {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-open-sans text-gray-800 antialiased overflow-x-hidden">
 
-        formMessage.textContent = 'Sending...';
-        formMessage.classList.add('text-gray-600');
-        form.querySelector('button[type="submit"]').disabled = true;
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-black text-white px-4 py-2 z-[999999]">
+        Skip to main content
+    </a>
 
-        fetch(apiBaseUrl + '/api/v1/public/forms/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            business_id: businessId,
-            form_type: 'contact',
-            form_data: { name, email, message },
-            submitter_email: email,
-            captcha_token: captchaToken
-          })
-        })
-        .then(response => {
-          if (!response.ok) {
-            return response.json().then(err => { throw new Error(err.message || 'Network response was not ok') });
-          }
-          return response.json();
-        })
-        .then(data => {
-          formMessage.textContent = 'Thank you! Your message has been sent.';
-          formMessage.classList.remove('text-red-600', 'text-gray-600');
-          formMessage.classList.add('text-green-600');
-          form.reset();
-          if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
-        })
-        .catch(error => {
-          formMessage.textContent = 'Sorry, something went wrong. Please try again.';
-          formMessage.classList.remove('text-green-600', 'text-gray-600');
-          formMessage.classList.add('text-red-600');
-        })
-        .finally(() => {
-          form.querySelector('button[type="submit"]').disabled = false;
+    <!-- Promo Bar -->
+    <div id="promo-bar" class="fixed top-0 left-0 right-0 bg-brand-gold text-white text-center py-2.5 z-[99999] font-open-sans font-bold text-sm">
+        <a href="#" class="hover:underline">Click Here For Our Current Promotion!</a>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="fixed top-[42px] left-0 right-0 z-[9999] transition-all duration-300 bg-transparent">
+        <div class="px-4 sm:px-6 lg:px-8 xl:px-12 py-6 lg:py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="/" class="logo-hidden" id="header-logo">
+                    <img src="https://skinclinicny.com/wp-content/uploads/2024/10/cropped-Logo-Web-1.png" alt="Skin Clinic" class="h-12 lg:h-14 w-auto brightness-0 invert">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="/" class="text-white font-montserrat text-sm font-medium hover:text-brand-gold transition-colors">Home</a>
+                    <a href="https://skinclinicny.com/about/" class="text-white font-montserrat text-sm font-medium hover:text-brand-gold transition-colors">About</a>
+                    <div class="relative group">
+                        <button class="text-white font-montserrat text-sm font-medium hover:text-brand-gold transition-colors flex items-center gap-1">
+                            Services
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-black shadow-xl rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="https://skinclinicny.com/permanent-makeup/" class="block px-4 py-3 text-white text-sm hover:bg-brand-gold hover:text-black transition-colors">Permanent Makeup</a>
+                            <a href="https://skinclinicny.com/aesthetics-skincare/" class="block px-4 py-3 text-white text-sm hover:bg-brand-gold hover:text-black transition-colors">Aesthetic Skincare</a>
+                            <a href="https://skinclinicny.com/medspa-services" class="block px-4 py-3 text-white text-sm hover:bg-brand-gold hover:text-black transition-colors">Medspa Services</a>
+                            <a href="https://skinclinicny.com/laser-services/" class="block px-4 py-3 text-white text-sm hover:bg-brand-gold hover:text-black transition-colors">Laser Services</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-white font-montserrat text-sm font-medium hover:text-brand-gold transition-colors">Membership</a>
+                    <a href="#" class="text-white font-montserrat text-sm font-medium hover:text-brand-gold transition-colors">Gift Card</a>
+                    <a href="#reviews" class="text-white font-montserrat text-sm font-medium hover:text-brand-gold transition-colors">Reviews</a>
+                    <a href="#faq" class="text-white font-montserrat text-sm font-medium hover:text-brand-gold transition-colors">FAQ</a>
+                    <a href="#contact" class="text-white font-montserrat text-sm font-medium hover:text-brand-gold transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop CTAs -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="#contact" class="bg-brand-gold text-white font-montserrat text-xs font-bold uppercase px-5 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300">Consultation</a>
+                    <a href="#" class="border-2 border-white text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition-all duration-300">Book Now</a>
+                    <a href="tel:914-771-7546" class="text-white font-montserrat text-sm font-bold hover:text-brand-gold transition-colors">914-771-7546</a>
+                    <button id="search-btn" class="text-white hover:text-brand-gold transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center space-x-4">
+                    <button id="search-btn-mobile" class="text-white hover:text-brand-gold transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-gold transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay fixed inset-0 bg-black/95 z-[99999] flex items-center justify-center">
+        <div class="w-full max-w-3xl px-6">
+            <div class="relative">
+                <input type="text" placeholder="Search..." class="w-full bg-transparent border-b-2 border-white/30 text-white text-2xl py-4 focus:outline-none focus:border-brand-gold font-montserrat placeholder-white/50">
+                <p class="text-white/60 mt-4 text-sm font-open-sans">Hit enter to search or ESC to close</p>
+            </div>
+        </div>
+        <button id="close-search" class="absolute top-8 right-8 text-white hover:text-brand-gold transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <span class="sr-only">Close Search</span>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-80 bg-black z-[99999] overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <img src="https://skinclinicny.com/wp-content/uploads/2024/10/cropped-Logo-Web-1.png" alt="Skin Clinic" class="h-10 w-auto brightness-0 invert">
+                <button id="close-mobile-menu" class="text-white hover:text-brand-gold transition-colors">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="/" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">Home</a>
+                <a href="https://skinclinicny.com/about/" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">About</a>
+                <div class="space-y-2">
+                    <p class="text-brand-gold font-montserrat text-sm uppercase tracking-wider">Services</p>
+                    <a href="https://skinclinicny.com/permanent-makeup/" class="block text-white/80 font-open-sans pl-4 hover:text-brand-gold transition-colors">Permanent Makeup</a>
+                    <a href="https://skinclinicny.com/aesthetics-skincare/" class="block text-white/80 font-open-sans pl-4 hover:text-brand-gold transition-colors">Aesthetic Skincare</a>
+                    <a href="https://skinclinicny.com/medspa-services" class="block text-white/80 font-open-sans pl-4 hover:text-brand-gold transition-colors">Medspa Services</a>
+                    <a href="https://skinclinicny.com/laser-services/" class="block text-white/80 font-open-sans pl-4 hover:text-brand-gold transition-colors">Laser Services</a>
+                </div>
+                <a href="#" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">Membership</a>
+                <a href="#" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">Gift Card</a>
+                <a href="#reviews" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">Reviews</a>
+                <a href="#faq" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">FAQ</a>
+                <a href="#contact" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">Contact</a>
+            </nav>
+            <div class="mt-8 space-y-3">
+                <a href="#contact" class="block bg-brand-gold text-white text-center font-montserrat text-sm font-bold uppercase px-5 py-3 rounded-full">Consultation</a>
+                <a href="#" class="block border-2 border-white text-white text-center font-montserrat text-sm font-bold uppercase px-5 py-3 rounded-full">Book Now</a>
+                <a href="sms:914-771-7546" class="block border-2 border-white text-white text-center font-montserrat text-sm font-bold uppercase px-5 py-3 rounded-full">Text Us</a>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/20">
+                <a href="tel:914-771-7546" class="block text-white font-montserrat text-xl font-bold mb-4">914-771-7546</a>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/SkinClinicNY/" target="_blank" class="text-white hover:text-brand-gold transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/Skinclinicny/" target="_blank" class="text-white hover:text-brand-gold transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[99998] opacity-0 invisible transition-all duration-300"></div>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen hero-bg flex items-center justify-center pt-[120px] pb-20">
+            <div class="absolute inset-0 sparkles-overlay opacity-60"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
+            
+            <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+                <p class="text-brand-gold-dark font-montserrat text-sm md:text-base font-medium tracking-[0.2em] uppercase mb-4 reveal">World Class</p>
+                <h1 class="font-playfair text-4xl md:text-5xl lg:text-[50px] font-bold text-white leading-tight mb-4 reveal" style="transition-delay: 100ms;">
+                    PERMANENT MAKEUP<br>& AESTHETIC SERVICES
+                </h1>
+                <p class="text-white/90 font-montserrat text-lg md:text-xl mb-2 reveal" style="transition-delay: 200ms;">
+                    In <span class="text-black bg-white/90 px-2 py-1 font-bold">Tuckahoe, NY</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 reveal" style="transition-delay: 300ms;">
+                    <a href="#contact" class="bg-brand-gold text-white font-montserrat text-sm font-bold uppercase px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Consultation
+                    </a>
+                    <a href="#" class="border-2 border-white text-white font-montserrat text-sm font-bold uppercase px-8 py-3.5 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome/Intro Section -->
+        <section class="py-20 lg:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="reveal">
+                        <p class="text-brand-warm font-baskervville text-2xl md:text-3xl italic mb-2">Welcome To</p>
+                        <h2 class="font-corinthia text-5xl md:text-6xl lg:text-7xl text-black mb-8">Skin Clinic</h2>
+                        
+                        <div class="space-y-6 text-gray-600 font-open-sans leading-relaxed">
+                            <p>Welcome to Skin Clinic NY, where artistry meets precision in the world of permanent makeup. We're thrilled to introduce you to our range of transformative beauty solutions, including our signature microblading service.</p>
+                            
+                            <p>At Skin Clinic NY, we believe that everyone deserves to feel confident and beautiful every day. Our team of certified and licensed artists specializes in enhancing your natural features with cutting-edge permanent makeup techniques. From perfectly shaped eyebrows to subtly enhanced lips and eyes, we're here to help you achieve the look you've always dreamed of.</p>
+                            
+                            <p>We pride ourselves on our commitment to excellence, using only the highest quality products and pigments while adhering to the strictest standards of hygiene and safety. Our world-class services are designed to save you time, boost your confidence, and ensure you look your best from the moment you wake up.</p>
+                            
+                            <p>Discover the art of effortless beauty with Skin Clinic NY. Your journey to a more radiant you starts here.</p>
+                        </div>
+                        
+                        <a href="https://skinclinicny.com/our-team/" class="inline-block mt-8 border-2 border-black text-black font-montserrat text-sm font-bold uppercase px-8 py-3 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                            Our Team
+                        </a>
+                    </div>
+                    
+                    <div class="reveal relative" style="transition-delay: 200ms;">
+                        <img src="https://skinclinicny.com/wp-content/uploads/2024/04/overhead-view-of-woman-with-various-facial-treatme-2023-11-27-05-26-31-utc-scaled.jpg" alt="Facial Treatments" class="w-full h-auto rounded-lg shadow-2xl">
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-brand-gold/20 rounded-full -z-10"></div>
+                        <div class="absolute -top-6 -right-6 w-24 h-24 bg-brand-gold/30 rounded-full -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 lg:py-28 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-brand-warm font-baskervville text-2xl md:text-3xl italic mb-2">Our</p>
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold text-black">Services</h2>
+                </div>
+
+                <!-- Desktop Grid -->
+                <div class="hidden lg:grid grid-cols-2 gap-8">
+                    <!-- Permanent Makeup -->
+                    <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg reveal">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://skinclinicny.com/wp-content/uploads/2024/10/Makeup-Model.jpg" alt="Permanent Makeup" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-playfair text-2xl font-bold text-black mb-4">Permanent Makeup</h3>
+                            <ul class="space-y-2 text-gray-600 font-open-sans mb-6">
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Eyebrows</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Eyeliner</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Lips</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>3D Areola Repigmentation</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Paramedical Tattooing</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Laser and Saline Tattoo Removal</li>
+                            </ul>
+                            <a href="https://skinclinicny.com/permanent-makeup/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Aesthetic Skincare -->
+                    <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg reveal" style="transition-delay: 100ms;">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://skinclinicny.com/wp-content/uploads/2024/10/skin-care.jpg" alt="Aesthetic Skincare" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-playfair text-2xl font-bold text-black mb-4">Aesthetic Skincare</h3>
+                            <ul class="space-y-2 text-gray-600 font-open-sans mb-6">
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Skincare Facials</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Face & Body Waxing</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Precision Brow Shaping & Tinting</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Eyelash Extensions</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Lash Lift & Tint</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Brow Lamination</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Makeup Services</li>
+                            </ul>
+                            <a href="https://skinclinicny.com/aesthetics-skincare/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Medspa Services -->
+                    <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg reveal" style="transition-delay: 200ms;">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://skinclinicny.com/wp-content/uploads/2024/10/medical_spa.webp" alt="Medspa Services" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-playfair text-2xl font-bold text-black mb-4">Medspa Services</h3>
+                            <ul class="space-y-2 text-gray-600 font-open-sans mb-6">
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Botox</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Fillers</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Laser Services</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Sclero Therapy (Spider Vein Reduction)</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Vivace RF Microneedling</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>IPL Photo Facials</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Chemical Peels</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>PDO Threads</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>PRP for Face & Hair</li>
+                            </ul>
+                            <a href="https://skinclinicny.com/medspa-services" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Laser Services -->
+                    <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg reveal" style="transition-delay: 300ms;">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://skinclinicny.com/wp-content/uploads/2024/10/2595833.webp" alt="Laser Services" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-playfair text-2xl font-bold text-black mb-4">Laser Services</h3>
+                            <ul class="space-y-2 text-gray-600 font-open-sans mb-6">
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Laser Hair Removal</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Photo Facials</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Laser Tattoo Removal</li>
+                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Non Ablative Skin Resurfacing</li>
+                            </ul>
+                            <a href="https://skinclinicny.com/laser-services/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Carousel -->
+                <div class="lg:hidden relative">
+                    <div id="services-carousel" class="testimonial-slider flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 -mx-4 px-4">
+                        <!-- Permanent Makeup -->
+                        <div class="testimonial-slide flex-shrink-0 w-[85vw] sm:w-[400px] bg-white rounded-lg overflow-hidden shadow-lg">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://skinclinicny.com/wp-content/uploads/2024/10/Makeup-Model.jpg" alt="Permanent Makeup" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-playfair text-xl font-bold text-black mb-3">Permanent Makeup</h3>
+                                <ul class="space-y-1.5 text-gray-600 font-open-sans text-sm mb-4">
+                                    <li>– Eyebrows</li>
+                                    <li>– Permanent Eyeliner</li>
+                                    <li>– Lip Blush</li>
+                                    <li>– 3D Areola Repigmentation</li>
+                                    <li>– Paramedical Tattoo</li>
+                                    <li>– Laser and Saline Tattoo Removal</li>
+                                </ul>
+                                <a href="https://skinclinicny.com/permanent-makeup/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Aesthetic Skincare -->
+                        <div class="testimonial-slide flex-shrink-0 w-[85vw] sm:w-[400px] bg-white rounded-lg overflow-hidden shadow-lg">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://skinclinicny.com/wp-content/uploads/2024/10/skin-care.jpg" alt="Aesthetic Skincare" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-playfair text-xl font-bold text-black mb-3">Aesthetic Skincare</h3>
+                                <ul class="space-y-1.5 text-gray-600 font-open-sans text-sm mb-4">
+                                    <li>– SkinCare Facials</li>
+                                    <li>– Face & Body Waxing</li>
+                                    <li>– Precision Brow Shaping & Tinting</li>
+                                    <li>– Eyelash Extensions</li>
+                                    <li>– Lash Lift & Tint</li>
+                                    <li>– Brow Lamination</li>
+                                    <li>– Makeup Services</li>
+                                </ul>
+                                <a href="https://skinclinicny.com/aesthetics-skincare/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Medspa Services -->
+                        <div class="testimonial-slide flex-shrink-0 w-[85vw] sm:w-[400px] bg-white rounded-lg overflow-hidden shadow-lg">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://skinclinicny.com/wp-content/uploads/2024/10/medical_spa.webp" alt="Medspa Services" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-playfair text-xl font-bold text-black mb-3">Medspa Services</h3>
+                                <ul class="space-y-1.5 text-gray-600 font-open-sans text-sm mb-4">
+                                    <li>– Botox</li>
+                                    <li>– Fillers</li>
+                                    <li>– Laser Services</li>
+                                    <li>– Sclero Therapy (Spider Vein Reduction)</li>
+                                    <li>– Vivace RF Microneedling</li>
+                                    <li>– IPL Photo Facials</li>
+                                    <li>– Chemical Peels</li>
+                                    <li>– PDO Threads</li>
+                                    <li>– PRP for Face & Hair</li>
+                                </ul>
+                                <a href="https://skinclinicny.com/medspa-services" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Laser Services -->
+                        <div class="testimonial-slide flex-shrink-0 w-[85vw] sm:w-[400px] bg-white rounded-lg overflow-hidden shadow-lg">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://skinclinicny.com/wp-content/uploads/2024/10/2595833.webp" alt="Laser Services" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-playfair text-xl font-bold text-black mb-3">Laser Services</h3>
+                                <ul class="space-y-1.5 text-gray-600 font-open-sans text-sm mb-4">
+                                    <li>– Laser Hair Removal</li>
+                                    <li>– Photo Facials</li>
+                                    <li>– Laser Tattoo Removal</li>
+                                    <li>– Non Ablative Skin Resurfacing</li>
+                                </ul>
+                                <a href="https://skinclinicny.com/laser-services/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mid-page CTA Strip -->
+        <section class="py-12 bg-brand-dark">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#contact" class="bg-brand-gold text-white font-montserrat text-sm font-bold uppercase px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300 shadow-lg">
+                        Consultation
+                    </a>
+                    <a href="#" class="border-2 border-white text-white font-montserrat text-sm font-bold uppercase px-8 py-3.5 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="py-20 lg:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-brand-warm font-baskervville text-2xl md:text-3xl italic mb-2">Real Talk</p>
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold text-black">Client Reviews</h2>
+                </div>
+
+                <div class="relative reveal">
+                    <!-- Navigation Buttons -->
+                    <button id="prev-review" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 w-12 h-12 bg-white border border-gray-200 rounded-full shadow-lg flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group">
+                        <svg class="w-5 h-5 text-black group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="next-review" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 w-12 h-12 bg-white border border-gray-200 rounded-full shadow-lg flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group">
+                        <svg class="w-5 h-5 text-black group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <!-- Reviews Slider -->
+                    <div id="reviews-container" class="overflow-hidden">
+                        <div id="reviews-track" class="flex transition-transform duration-500 ease-out">
+                            <!-- Review 1 -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                                <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800">
+                                    <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
+                                    <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">All I can say is AMAZING! Every visit I received a very warm welcome to a very clean and inviting place. Maria is well versed in her craft; she took the time to explain the entire process as well as informing me throughout the entire process what she was doing next. I never thought my brows, eyeliner and lips would look this good and last as long as they did. I highly recommend Maria, she's truly good at what she does and made my entire experience relaxing. Maria is just so kind and nice to talk to on top of her skill!</p>
+                                    <p class="font-montserrat font-bold text-brand-gold">Maria "Maria" L</p>
+                                </div>
+                            </div>
+
+                            <!-- Review 2 -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                                <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800">
+                                    <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
+                                    <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">I'm so happy with the results of my brows and eyeliner! Maria is professional, explained each step, and extremely talented. I was referred to her by many women from a local FB page and was not disappointed one bit. Thank you for making me feel happy and smile when I see myself in the mirror.</p>
+                                    <p class="font-montserrat font-bold text-brand-gold">Loretta London</p>
+                                </div>
+                            </div>
+
+                            <!-- Review 3 -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                                <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800">
+                                    <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
+                                    <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">Yes, Advanced Aesthetic Solutions is As good as it gets! From my first visit I knew Maria was what I was looking for to take care of my skin. I am planning to get "Younger Together" Her knowledge of skin care has lead to compliments from my friends on how great my skin looks. Looking to make a change? Then give her a chance to help.</p>
+                                    <p class="font-montserrat font-bold text-brand-gold">Dafne G.</p>
+                                </div>
+                            </div>
+
+                            <!-- Review 4 -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                                <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800">
+                                    <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
+                                    <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">I highly recommend AAS -owner Maria-. I signed up for the facial sculpt and definately notice an improvement in the way my skin and jawline/neck look. The treatment is painless and relaxing. Maria is pleasant and professional. It is easy to get to with good parking. So do something for yourself. You deserve it.</p>
+                                    <p class="font-montserrat font-bold text-brand-gold">Ursula P.</p>
+                                </div>
+                            </div>
+
+                            <!-- Review 5 -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                                <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800">
+                                    <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
+                                    <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">Absolutely fantastic!! Maria is of the most knowledgeable skincare professionals I have ever met, and I have been everywhere. She is so nice and personable, and did a great job taking care of my girlfriend and I. We have been using her services several months now and both have gotten several compliments from friends and family. Not to mention, with the insane prices people have tried to charge us in the past for similar services, Maria's prices are fair and she goes the extra mile to make sure we are happy with every service. She is the absolute best!!!</p>
+                                    <p class="font-montserrat font-bold text-brand-gold">Joe O.</p>
+                                </div>
+                            </div>
+
+                            <!-- Review 6 -->
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                                <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800">
+                                    <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
+                                    <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">Maria, the owner of Advanced Aesthetic Solutions, did wonders in tightening my neck, and I highly recommend her for relaxing and successful treatments that make your skin look visibly better.</p>
+                                    <p class="font-montserrat font-bold text-brand-gold">Nadine B.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dots Indicator -->
+                    <div class="flex justify-center gap-2 mt-8">
+                        <button class="review-dot w-3 h-3 rounded-full bg-brand-gold transition-all" data-index="0"></button>
+                        <button class="review-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-gold/50 transition-all" data-index="1"></button>
+                        <button class="review-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-gold/50 transition-all" data-index="2"></button>
+                        <button class="review-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-gold/50 transition-all" data-index="3"></button>
+                        <button class="review-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-gold/50 transition-all" data-index="4"></button>
+                        <button class="review-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-gold/50 transition-all" data-index="5"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 lg:py-28 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold text-black">F.A.Q</h2>
+                </div>
+
+                <div class="space-y-0 reveal">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item border-b border-black/10">
+                        <button class="faq-trigger w-full py-6 flex items-center justify-between text-left group">
+                            <span class="font-montserrat text-lg md:text-xl lg:text-[25px] font-medium text-black group-hover:text-brand-gold transition-colors pr-8">What types of services do you offer?</span>
+                            <span class="faq-icon flex-shrink-0 w-6 h-6 relative">
+                                <span class="absolute top-1/2 left-0 w-full h-0.5 bg-black -translate-y-1/2"></span>
+                                <span class="absolute top-0 left-1/2 w-0.5 h-full bg-black -translate-x-1/2"></span>
+                            </span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="pb-6 text-gray-600 font-open-sans leading-relaxed">
+                                We provide a wide range of beauty and wellness services, including Permanent Makeup, Aesthetic Skin Care treatments, Medspa Services, and Laser Services. Each of these categories is designed to enhance your natural beauty and improve your overall skin health.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item border-b border-black/10">
+                        <button class="faq-trigger w-full py-6 flex items-center justify-between text-left group">
+                            <span class="font-montserrat text-lg md:text-xl lg:text-[25px] font-medium text-black group-hover:text-brand-gold transition-colors pr-8">How do I know which treatment is right for me?</span>
+                            <span class="faq-icon flex-shrink-0 w-6 h-6 relative">
+                                <span class="absolute top-1/2 left-0 w-full h-0.5 bg-black -translate-y-1/2"></span>
+                                <span class="absolute top-0 left-1/2 w-0.5 h-full bg-black -translate-x-1/2"></span>
+                            </span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="pb-6 text-gray-600 font-open-sans leading-relaxed">
+                                We recommend scheduling a consultation with our experienced professionals. During the consultation, we will assess your skin type, beauty goals, and concerns to recommend the best treatments for your needs.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item border-b border-black/10">
+                        <button class="faq-trigger w-full py-6 flex items-center justify-between text-left group">
+                            <span class="font-montserrat text-lg md:text-xl lg:text-[25px] font-medium text-black group-hover:text-brand-gold transition-colors pr-8">Are your treatments safe?</span>
+                            <span class="faq-icon flex-shrink-0 w-6 h-6 relative">
+                                <span class="absolute top-1/2 left-0 w-full h-0.5 bg-black -translate-y-1/2"></span>
+                                <span class="absolute top-0 left-1/2 w-0.5 h-full bg-black -translate-x-1/2"></span>
+                            </span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="pb-6 text-gray-600 font-open-sans leading-relaxed">
+                                Yes, all of our treatments are performed by licensed and trained professionals using state-of-the-art technology and equipment. We follow strict safety protocols to ensure every procedure is safe and effective.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item border-b border-black/10">
+                        <button class="faq-trigger w-full py-6 flex items-center justify-between text-left group">
+                            <span class="font-montserrat text-lg md:text-xl lg:text-[25px] font-medium text-black group-hover:text-brand-gold transition-colors pr-8">What should I expect during my first appointment?</span>
+                            <span class="faq-icon flex-shrink-0 w-6 h-6 relative">
+                                <span class="absolute top-1/2 left-0 w-full h-0.5 bg-black -translate-y-1/2"></span>
+                                <span class="absolute top-0 left-1/2 w-0.5 h-full bg-black -translate-x-1/2"></span>
+                            </span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="pb-6 text-gray-600 font-open-sans leading-relaxed">
+                                Your first appointment will usually include a consultation to discuss your goals and expectations, as well as a personalized treatment plan. For some services, treatments can be done on the same day; for others, a follow-up appointment may be required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item border-b border-black/10">
+                        <button class="faq-trigger w-full py-6 flex items-center justify-between text-left group">
+                            <span class="font-montserrat text-lg md:text-xl lg:text-[25px] font-medium text-black group-hover:text-brand-gold transition-colors pr-8">Do you offer financing or payment plans for treatments?</span>
+                            <span class="faq-icon flex-shrink-0 w-6 h-6 relative">
+                                <span class="absolute top-1/2 left-0 w-full h-0.5 bg-black -translate-y-1/2"></span>
+                                <span class="absolute top-0 left-1/2 w-0.5 h-full bg-black -translate-x-1/2"></span>
+                            </span>
+                        </button>
+                        <div class="faq-content">
+                            <div class="pb-6 text-gray-600 font-open-sans leading-relaxed">
+                                Yes, we offer flexible payment options and financing plans for many of our services. Please contact us for more details about our payment options and how to apply for financing.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram/Social Strip -->
+        <section class="py-16 bg-white border-t border-gray-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+                <p class="text-brand-warm font-baskervville text-xl mb-2">Follow Us On</p>
+                <h3 class="font-corinthia text-5xl md:text-6xl text-black mb-6">@skinclinicny</h3>
+                <div class="flex justify-center gap-4">
+                    <a href="https://www.instagram.com/Skinclinicny/" target="_blank" class="inline-flex items-center gap-2 bg-black text-white font-montserrat text-sm font-bold uppercase px-6 py-3 rounded-full hover:bg-brand-gold transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        Instagram
+                    </a>
+                    <a href="https://www.facebook.com/SkinClinicNY/" target="_blank" class="inline-flex items-center gap-2 border-2 border-black text-black font-montserrat text-sm font-bold uppercase px-6 py-3 rounded-full hover:bg-black hover:text-white transition-all">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Facebook
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 lg:py-0 bg-white">
+            <div class="grid lg:grid-cols-2">
+                <!-- Contact Form -->
+                <div class="px-4 sm:px-6 lg:px-12 xl:px-20 py-16 lg:py-28 reveal">
+                    <h2 class="font-playfair text-3xl md:text-4xl font-bold text-black mb-4">Schedule a Free Consultation</h2>
+                    <p class="text-gray-600 font-open-sans mb-8">Fill out the form below and we'll get back to you as soon as possible to schedule your consultation.</p>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-gold focus:border-transparent outline-none transition-all font-open-sans">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-gold focus:border-transparent outline-none transition-all font-open-sans">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-gold focus:border-transparent outline-none transition-all font-open-sans">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-gold focus:border-transparent outline-none transition-all font-open-sans resize-none"></textarea>
+                        </div>
+                        
+                        <!-- Honeypot field -->
+                        <div class="hidden">
+                            <label for="comments">Comments (do not fill)</label>
+                            <input type="text" id="comments" name="comments">
+                        </div>
+                        
+                        <p class="text-xs text-gray-500 font-open-sans">* indicates required fields</p>
+                        
+                        <button type="submit" class="w-full bg-brand-gold text-white font-montserrat text-sm font-bold uppercase px-8 py-4 rounded-lg hover:bg-black transition-colors duration-300">
+                            Send Message
+                        </button>
+                        
+                        <div id="form-success" class="hidden bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg font-open-sans text-sm">
+                            Thank you! Your message has been sent successfully.
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="contact-bg relative min-h-[500px] lg:min-h-full flex items-center justify-center reveal" style="transition-delay: 200ms;">
+                    <div class="absolute inset-0 bg-[#020202]/90"></div>
+                    <div class="relative z-10 text-center text-white px-8 py-16">
+                        <h3 class="font-playfair text-3xl font-bold mb-8">Contact Info</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <p class="text-brand-gold font-montserrat text-sm uppercase tracking-wider mb-2">Phone</p>
+                                <a href="tel:914-771-7546" class="text-2xl font-montserrat font-bold hover:text-brand-gold transition-colors">914-771-7546</a>
+                            </div>
+                            
+                            <div>
+                                <p class="text-brand-gold font-montserrat text-sm uppercase tracking-wider mb-2">Email</p>
+                                <a href="mailto:beauty@skinclinicny.com" class="text-lg hover:text-brand-gold transition-colors font-open-sans">beauty@skinclinicny.com</a>
+                            </div>
+                            
+                            <div>
+                                <p class="text-brand-gold font-montserrat text-sm uppercase tracking-wider mb-2">Location</p>
+                                <a href="https://maps.app.goo.gl/ES8mYVRwRyiziy4U9" target="_blank" class="text-lg hover:text-brand-gold transition-colors font-open-sans">
+                                    69 Main St<br>
+                                    Tuckahoe, NY 10707
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 pt-10 border-t border-white/20">
+                            <p class="text-white/60 font-open-sans text-sm mb-4">Business Hours</p>
+                            <p class="font-montserrat">Mon - Fri: 9AM - 6PM</p>
+                            <p class="font-montserrat">Sat: 10AM - 4PM</p>
+                            <p class="font-montserrat">Sun: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-center md:text-left">
+                    <p class="font-open-sans text-sm text-white/60">&copy; 2026 Skin Clinic. All Rights Reserved</p>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="https://www.facebook.com/SkinClinicNY/" target="_blank" class="text-white/60 hover:text-brand-gold transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/Skinclinicny/" target="_blank" class="text-white/60 hover:text-brand-gold transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Floating Bar -->
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-[9999] flex shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+        <a href="#contact" class="flex-1 bg-brand-gold text-white font-montserrat text-xs font-bold uppercase py-4 text-center hover:bg-brand-gold-dark transition-colors">
+            Consultation
+        </a>
+        <a href="#" class="flex-1 bg-black text-white font-montserrat text-xs font-bold uppercase py-4 text-center hover:bg-gray-800 transition-colors">
+            Book
+        </a>
+        <a href="sms:914-771-7546" class="flex-1 bg-white text-black font-montserrat text-xs font-bold uppercase py-4 text-center border-l border-gray-200 hover:bg-gray-50 transition-colors">
+            Text
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Header scroll behavior
+        const header = document.getElementById('header');
+        const headerLogo = document.getElementById('header-logo');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.classList.add('header-scrolled');
+                header.classList.remove('bg-transparent');
+                headerLogo.classList.remove('logo-hidden');
+                headerLogo.classList.add('logo-visible');
+            } else {
+                header.classList.remove('header-scrolled');
+                header.classList.add('bg-transparent');
+                headerLogo.classList.add('logo-hidden');
+                headerLogo.classList.remove('logo-visible');
+            }
+            
+            lastScroll = currentScroll;
         });
-      });
-    });
-  </script>
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            mobileMenuOverlay.classList.remove('opacity-0', 'invisible');
+            mobileMenuOverlay.classList.add('opacity-100', 'visible');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenuFn() {
+            mobileMenu.classList.remove('open');
+            mobileMenuOverlay.classList.add('opacity-0', 'invisible');
+            mobileMenuOverlay.classList.remove('opacity-100', 'visible');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        closeMobileMenu.addEventListener('click', closeMobileMenuFn);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenuFn);
+
+        // Search overlay
+        const searchBtn = document.getElementById('search-btn');
+        const searchBtnMobile = document.getElementById('search-btn-mobile');
+        const closeSearch = document.getElementById('close-search');
+        const searchOverlay = document.getElementById('search-overlay');
+
+        function openSearch() {
+            searchOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            searchOverlay.querySelector('input').focus();
+        }
+
+        function closeSearchFn() {
+            searchOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        searchBtn.addEventListener('click', openSearch);
+        searchBtnMobile.addEventListener('click', openSearch);
+        closeSearch.addEventListener('click', closeSearchFn);
+
+        // ESC key to close overlays
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSearchFn();
+                closeMobileMenuFn();
+            }
+        });
+
+        // FAQ Accordion
+        const faqTriggers = document.querySelectorAll('.faq-trigger');
+        
+        faqTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const content = trigger.nextElementSibling;
+                const icon = trigger.querySelector('.faq-icon');
+                const isOpen = content.classList.contains('open');
+                
+                // Close all others (optional - remove this block to allow multiple open)
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
+                document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+                
+                if (!isOpen) {
+                    content.classList.add('open');
+                    icon.classList.add('open');
+                }
+            });
+        });
+
+        // Reviews Slider
+        const reviewsTrack = document.getElementById('reviews-track');
+        const prevReview = document.getElementById('prev-review');
+        const nextReview = document.getElementById('next-review');
+        const reviewDots = document.querySelectorAll('.review-dot');
+        let currentReview = 0;
+        const totalReviews = 6;
+        
+        function getSlidesPerView() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        }
+
+        function updateSlider() {
+            const slidesPerView = getSlidesPerView();
+            const slideWidth = 100 / slidesPerView;
+            reviewsTrack.style.transform = `translateX(-${currentReview * slideWidth}%)`;
+            
+            reviewDots.forEach((dot, index) => {
+                if (index === currentReview) {
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-brand-gold');
+                } else {
+                    dot.classList.add('bg-gray-300');
+                    dot.classList.remove('bg-brand-gold');
+                }
+            });
+        }
+
+        prevReview.addEventListener('click', () => {
+            currentReview = currentReview > 0 ? currentReview - 1 : totalReviews - getSlidesPerView();
+            updateSlider();
+        });
+
+        nextReview.addEventListener('click', () => {
+            const slidesPerView = getSlidesPerView();
+            currentReview = currentReview < totalReviews - slidesPerView ? currentReview + 1 : 0;
+            updateSlider();
+        });
+
+        reviewDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentReview = index;
+                updateSlider();
+            });
+        });
+
+        window.addEventListener('resize', updateSlider);
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Check honeypot
+            const honeypot = document.getElementById('comments').value;
+            if (honeypot) {
+                return; // Bot submission, silently fail
+            }
+            
+            // Simulate form submission
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would normally send to a server
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            formSuccess.classList.remove('hidden');
+            contactForm.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                formSuccess.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    closeMobileMenuFn();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
