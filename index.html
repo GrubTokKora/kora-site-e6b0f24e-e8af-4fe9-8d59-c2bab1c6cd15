@@ -96,18 +96,312 @@
         }
     </script>
     
-    <link rel="stylesheet" href="assets/site.css">
-</head>
-<body class="page-home font-open-sans text-gray-800 antialiased overflow-x-hidden w-full max-w-[100vw] min-w-0">
+    <style>
+        /* Custom styles for things Tailwind can't express easily */
+        .hero-bg {
+            background-image: url('https://skinclinicny.com/wp-content/uploads/2024/11/Hero-Black-with-abstract-design-2.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .sparkles-overlay {
+            background-image: url('https://skinclinicny.com/wp-content/uploads/2024/11/Sparkles-back2.png');
+            background-size: cover;
+            background-position: center;
+            pointer-events: none;
+        }
+        
+        .contact-bg {
+            background-image: url('https://skinclinicny.com/wp-content/uploads/2024/10/contact-inf-800x800-1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* FAQ Accordion styles */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-content.open {
+            max-height: 500px;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-icon.open {
+            transform: rotate(45deg);
+        }
+        
+        /* Testimonial slider */
+        .testimonial-slider {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .testimonial-slide {
+            scroll-snap-align: center;
+        }
+        
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Header: smooth fade from transparent → solid (avoid toggling Tailwind bg-*; use rgba for interpolation) */
+        #header {
+            top: 0;
+            /* overflow-x-hidden on the header clips absolutely positioned dropdowns */
+            overflow: visible;
+            background-color: rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            transition:
+                background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #header.header-scrolled {
+            background-color: rgb(0, 0, 0);
+            box-shadow: 0 3px 45px rgba(0, 0, 0, 0.15);
+        }
+        /* Header inner row: subtle vertical settle + smooth reflow with logo */
+        #header-inner {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #header:not(.header-scrolled) #header-inner {
+            transform: translateY(4px);
+        }
+        #header.header-scrolled #header-inner {
+            transform: translateY(0);
+        }
+        /* Nav + CTAs: move/fade slightly with header (logo width drives main horizontal motion) */
+        #header-nav-desktop,
+        #header-cta-desktop,
+        #header-mobile-actions {
+            transition: opacity 0.5s ease;
+        }
+        #header:not(.header-scrolled) #header-nav-desktop,
+        #header:not(.header-scrolled) #header-cta-desktop,
+        #header:not(.header-scrolled) #header-mobile-actions {
+            opacity: 0.9;
+        }
+        #header.header-scrolled #header-nav-desktop,
+        #header.header-scrolled #header-cta-desktop,
+        #header.header-scrolled #header-mobile-actions {
+            opacity: 1;
+        }
+        /* Logo: animate width so nav/CTAs slide smoothly (no layout jump) */
+        #header-logo {
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            transition:
+                max-width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.45s ease,
+                margin 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #header-logo.header-logo-hidden {
+            max-width: 0;
+            opacity: 0;
+            margin-right: 0;
+            pointer-events: none;
+        }
+        #header-logo.header-logo-visible {
+            max-width: 220px;
+            opacity: 1;
+            margin-right: 0.75rem;
+            pointer-events: auto;
+        }
+        @media (min-width: 1024px) {
+            #header-logo.header-logo-visible {
+                max-width: 240px;
+            }
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        /* Service card hover */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Custom scrollbar for testimonials */
+        .testimonial-slider::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .testimonial-slider {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Prevent horizontal scroll: media scales; carousels stay within scrollport */
+        main img {
+            max-width: 100%;
+            height: auto;
+        }
+        #services-carousel {
+            max-width: 100%;
+        }
 
-        <!-- Skip to main content -->
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            #header {
+                transition-duration: 0.01ms;
+            }
+            #header:not(.header-scrolled) #header-inner,
+            #header.header-scrolled #header-inner {
+                transform: none;
+            }
+            #header-logo {
+                transition: none !important;
+            }
+            #header-nav-desktop,
+            #header-cta-desktop,
+            #header-mobile-actions {
+                transition: none !important;
+                opacity: 1 !important;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            
+            .faq-content {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-open-sans text-gray-800 antialiased overflow-x-hidden w-full max-w-[100vw] min-w-0">
+
+    <!-- Skip to main content -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-black text-white px-4 py-2 z-[999999]">
         Skip to main content
     </a>
 
-    <div id="site-header"></div>
+    <!-- Header -->
+    <header id="header" class="fixed left-0 right-0 z-[10001] w-full max-w-[100vw]">
+        <div class="px-4 sm:px-6 lg:px-8 xl:px-12 py-6 lg:py-4 min-w-0">
+            <div id="header-inner" class="flex items-center justify-between gap-2 sm:gap-4 min-w-0">
+                <!-- Logo: width animates so nav/CTAs slide smoothly when header solidifies -->
+                <a href="/" class="header-logo-hidden" id="header-logo" aria-hidden="true">
+                    <img src="https://skinclinicny.com/wp-content/uploads/2024/10/cropped-Logo-Web-1.png" alt="Skin Clinic" class="h-12 lg:h-16 w-auto max-w-[220px] lg:max-w-[240px] object-contain object-left shrink-0" width="512" height="512" decoding="async">
+                </a>
 
-<main id="main-content" class="w-full max-w-[100vw] min-w-0 overflow-x-hidden">
+                <!-- Desktop Navigation -->
+                <nav id="header-nav-desktop" class="hidden lg:flex flex-1 min-w-0 justify-center items-center flex-wrap gap-x-6 gap-y-2">
+                    <a href="/" class="text-white font-montserrat font-semibold hover:text-brand-gold transition-colors">Home</a>
+                    <a href="https://skinclinicny.com/about/" class="text-white font-montserrat font-semibold hover:text-brand-gold transition-colors">About</a>
+                    <div class="relative z-[10050] group">
+                        <button type="button" class="text-white font-montserrat font-semibold hover:text-brand-gold transition-colors flex items-center gap-1" aria-expanded="false" aria-haspopup="true">
+                            Services
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute top-full left-0 z-[10060] pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200" role="menu">
+                            <div class="bg-black shadow-xl rounded-md overflow-hidden border border-white/10">
+                            <a href="https://skinclinicny.com/permanent-makeup/" class="block px-4 py-3 text-white text-sm hover:bg-brand-gold hover:text-black transition-colors">Permanent Makeup</a>
+                            <a href="https://skinclinicny.com/aesthetics-skincare/" class="block px-4 py-3 text-white text-sm hover:bg-brand-gold hover:text-black transition-colors">Aesthetic Skincare</a>
+                            <a href="https://skinclinicny.com/medspa-services" class="block px-4 py-3 text-white text-sm hover:bg-brand-gold hover:text-black transition-colors">Medspa Services</a>
+                            <a href="https://skinclinicny.com/laser-services/" class="block px-4 py-3 text-white text-sm hover:bg-brand-gold hover:text-black transition-colors">Laser Services</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#reviews" class="text-white font-montserrat font-semibold hover:text-brand-gold transition-colors">Reviews</a>
+                    <a href="#faq" class="text-white font-montserrat font-semibold hover:text-brand-gold transition-colors">FAQ</a>
+                    <a href="#contact" class="text-white font-montserrat font-semibold hover:text-brand-gold transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop CTAs -->
+                <div id="header-cta-desktop" class="hidden lg:flex flex-shrink-0 items-center gap-3 flex-wrap justify-end">
+                    <a href="#contact" class="bg-brand-gold text-white font-montserrat text-xs font-bold uppercase px-4 py-2.5 rounded-full hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap">Consultation</a>
+                    <a href="#" class="border-2 border-white text-white font-montserrat text-xs font-bold uppercase px-4 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap">Book Now</a>
+                    <a href="tel:914-771-7546" class="text-white font-montserrat text-sm font-bold hover:text-brand-gold transition-colors whitespace-nowrap">914-771-7546</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div id="header-mobile-actions" class="lg:hidden flex items-center space-x-4 ml-auto">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-gold transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-80 bg-black z-[99999] overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <img src="https://skinclinicny.com/wp-content/uploads/2024/10/cropped-Logo-Web-1.png" alt="Skin Clinic" class="h-10 w-auto max-w-[180px] object-contain object-left" width="512" height="512" decoding="async" loading="lazy">
+                <button id="close-mobile-menu" class="text-white hover:text-brand-gold transition-colors">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="/" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">Home</a>
+                <a href="https://skinclinicny.com/about/" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">About</a>
+                <div class="space-y-2">
+                    <p class="text-brand-gold font-montserrat text-sm uppercase tracking-wider">Services</p>
+                    <a href="https://skinclinicny.com/permanent-makeup/" class="block text-white/80 font-open-sans pl-4 hover:text-brand-gold transition-colors">Permanent Makeup</a>
+                    <a href="https://skinclinicny.com/aesthetics-skincare/" class="block text-white/80 font-open-sans pl-4 hover:text-brand-gold transition-colors">Aesthetic Skincare</a>
+                    <a href="https://skinclinicny.com/medspa-services" class="block text-white/80 font-open-sans pl-4 hover:text-brand-gold transition-colors">Medspa Services</a>
+                    <a href="https://skinclinicny.com/laser-services/" class="block text-white/80 font-open-sans pl-4 hover:text-brand-gold transition-colors">Laser Services</a>
+                </div>
+                <a href="#" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">Membership</a>
+                <a href="#" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">Gift Card</a>
+                <a href="#reviews" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">Reviews</a>
+                <a href="#faq" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">FAQ</a>
+                <a href="#contact" class="block text-white font-montserrat text-lg hover:text-brand-gold transition-colors">Contact</a>
+            </nav>
+            <div class="mt-8 space-y-3">
+                <a href="#contact" class="block bg-brand-gold text-white text-center font-montserrat text-sm font-bold uppercase px-5 py-3 rounded-full">Consultation</a>
+                <a href="#" class="block border-2 border-white text-white text-center font-montserrat text-sm font-bold uppercase px-5 py-3 rounded-full">Book Now</a>
+                <a href="sms:914-771-7546" class="block border-2 border-white text-white text-center font-montserrat text-sm font-bold uppercase px-5 py-3 rounded-full">Text Us</a>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/20">
+                <a href="tel:914-771-7546" class="block text-white font-montserrat text-xl font-bold mb-4">914-771-7546</a>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/SkinClinicNY/" target="_blank" class="text-white hover:text-brand-gold transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/Skinclinicny/" target="_blank" class="text-white hover:text-brand-gold transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[99998] opacity-0 invisible transition-all duration-300"></div>
+
+    <main id="main-content" class="w-full max-w-[100vw] min-w-0 overflow-x-hidden">
         <!-- Hero Section -->
         <section id="home" class="relative min-h-screen hero-bg flex items-center justify-center md:items-end md:justify-start pt-[120px] pb-16 md:pb-12 lg:pb-16 overflow-x-hidden">
             <div class="relative z-10 w-full max-w-5xl px-4 sm:px-6 lg:px-10 xl:px-14 text-center md:text-left mx-auto md:mx-0 md:ml-6 lg:ml-10 xl:ml-14 md:mb-10 lg:mb-14">
@@ -131,7 +425,7 @@
         </section>
 
         <!-- Welcome/Intro Section -->
-        <section id="about" class="py-20 lg:py-28 bg-white overflow-x-hidden min-w-0">
+        <section class="py-20 lg:py-28 bg-white overflow-x-hidden min-w-0">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div class="reveal">
@@ -148,7 +442,7 @@
                             <p>Discover the art of effortless beauty with Skin Clinic NY. Your journey to a more radiant you starts here.</p>
                         </div>
                         
-                        <a href="our-team.html" class="inline-block mt-8 border-2 border-black text-black font-montserrat text-sm font-bold uppercase px-8 py-3 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                        <a href="https://skinclinicny.com/our-team/" class="inline-block mt-8 border-2 border-black text-black font-montserrat text-sm font-bold uppercase px-8 py-3 rounded-full hover:bg-black hover:text-white transition-all duration-300">
                             Our Team
                         </a>
                     </div>
@@ -187,7 +481,7 @@
                                 <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Paramedical Tattooing</li>
                                 <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Laser and Saline Tattoo Removal</li>
                             </ul>
-                            <a href="permanent-makeup.html" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                            <a href="https://skinclinicny.com/permanent-makeup/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
                                 Learn More
                             </a>
                         </div>
@@ -209,7 +503,7 @@
                                 <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Brow Lamination</li>
                                 <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Makeup Services</li>
                             </ul>
-                            <a href="aesthetics-skincare.html" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                            <a href="https://skinclinicny.com/aesthetics-skincare/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
                                 Learn More
                             </a>
                         </div>
@@ -233,7 +527,7 @@
                                 <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>PDO Threads</li>
                                 <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>PRP for Face & Hair</li>
                             </ul>
-                            <a href="medspa-services.html" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                            <a href="https://skinclinicny.com/medspa-services" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
                                 Learn More
                             </a>
                         </div>
@@ -252,7 +546,7 @@
                                 <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Laser Tattoo Removal</li>
                                 <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Non Ablative Skin Resurfacing</li>
                             </ul>
-                            <a href="laser-services.html" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                            <a href="https://skinclinicny.com/laser-services/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
                                 Learn More
                             </a>
                         </div>
@@ -277,7 +571,7 @@
                                     <li>– Paramedical Tattoo</li>
                                     <li>– Laser and Saline Tattoo Removal</li>
                                 </ul>
-                                <a href="permanent-makeup.html" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
+                                <a href="https://skinclinicny.com/permanent-makeup/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
                                     Learn More
                                 </a>
                             </div>
@@ -299,7 +593,7 @@
                                     <li>– Brow Lamination</li>
                                     <li>– Makeup Services</li>
                                 </ul>
-                                <a href="aesthetics-skincare.html" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
+                                <a href="https://skinclinicny.com/aesthetics-skincare/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
                                     Learn More
                                 </a>
                             </div>
@@ -323,7 +617,7 @@
                                     <li>– PDO Threads</li>
                                     <li>– PRP for Face & Hair</li>
                                 </ul>
-                                <a href="medspa-services.html" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
+                                <a href="https://skinclinicny.com/medspa-services" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
                                     Learn More
                                 </a>
                             </div>
@@ -342,7 +636,7 @@
                                     <li>– Laser Tattoo Removal</li>
                                     <li>– Non Ablative Skin Resurfacing</li>
                                 </ul>
-                                <a href="laser-services.html" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
+                                <a href="https://skinclinicny.com/laser-services/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-5 py-2.5 rounded">
                                     Learn More
                                 </a>
                             </div>
@@ -662,10 +956,218 @@
         </section>
     </main>
 
-        <div id="site-footer"></div>
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-white/10 overflow-x-hidden min-w-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-center md:text-left">
+                    <p class="font-open-sans text-sm text-white/60">&copy; 2026 Skin Clinic. All Rights Reserved</p>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="https://www.facebook.com/SkinClinicNY/" target="_blank" class="text-white/60 hover:text-brand-gold transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/Skinclinicny/" target="_blank" class="text-white/60 hover:text-brand-gold transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<!-- JavaScript -->
-    <script src="assets/layout.js" defer></script>
-    <script src="assets/home.js" defer></script>
+    <!-- JavaScript -->
+    <script>
+        // Header: solid bar when scrolled; logo only when solid
+        const header = document.getElementById('header');
+        const headerLogo = document.getElementById('header-logo');
+
+        function updateHeaderState() {
+            const stuck = window.pageYOffset > 100;
+            if (stuck) {
+                header.classList.add('header-scrolled');
+                headerLogo.classList.remove('header-logo-hidden');
+                headerLogo.classList.add('header-logo-visible');
+                headerLogo.setAttribute('aria-hidden', 'false');
+            } else {
+                header.classList.remove('header-scrolled');
+                headerLogo.classList.add('header-logo-hidden');
+                headerLogo.classList.remove('header-logo-visible');
+                headerLogo.setAttribute('aria-hidden', 'true');
+            }
+        }
+
+        window.addEventListener('scroll', updateHeaderState, { passive: true });
+        updateHeaderState();
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            mobileMenuOverlay.classList.remove('opacity-0', 'invisible');
+            mobileMenuOverlay.classList.add('opacity-100', 'visible');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenuFn() {
+            mobileMenu.classList.remove('open');
+            mobileMenuOverlay.classList.add('opacity-0', 'invisible');
+            mobileMenuOverlay.classList.remove('opacity-100', 'visible');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        closeMobileMenu.addEventListener('click', closeMobileMenuFn);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenuFn);
+
+        // ESC key to close mobile menu
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMobileMenuFn();
+            }
+        });
+
+        // FAQ Accordion
+        const faqTriggers = document.querySelectorAll('.faq-trigger');
+        
+        faqTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const content = trigger.nextElementSibling;
+                const icon = trigger.querySelector('.faq-icon');
+                const isOpen = content.classList.contains('open');
+                
+                // Close all others (optional - remove this block to allow multiple open)
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
+                document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+                
+                if (!isOpen) {
+                    content.classList.add('open');
+                    icon.classList.add('open');
+                }
+            });
+        });
+
+        // Reviews Slider
+        const reviewsTrack = document.getElementById('reviews-track');
+        const prevReview = document.getElementById('prev-review');
+        const nextReview = document.getElementById('next-review');
+        const reviewDots = document.querySelectorAll('.review-dot');
+        let currentReview = 0;
+        const totalReviews = 6;
+        
+        function getSlidesPerView() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        }
+
+        function updateSlider() {
+            const slidesPerView = getSlidesPerView();
+            const slideWidth = 100 / slidesPerView;
+            reviewsTrack.style.transform = `translateX(-${currentReview * slideWidth}%)`;
+            
+            reviewDots.forEach((dot, index) => {
+                if (index === currentReview) {
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-brand-gold');
+                } else {
+                    dot.classList.add('bg-gray-300');
+                    dot.classList.remove('bg-brand-gold');
+                }
+            });
+        }
+
+        prevReview.addEventListener('click', () => {
+            currentReview = currentReview > 0 ? currentReview - 1 : totalReviews - getSlidesPerView();
+            updateSlider();
+        });
+
+        nextReview.addEventListener('click', () => {
+            const slidesPerView = getSlidesPerView();
+            currentReview = currentReview < totalReviews - slidesPerView ? currentReview + 1 : 0;
+            updateSlider();
+        });
+
+        reviewDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentReview = index;
+                updateSlider();
+            });
+        });
+
+        window.addEventListener('resize', updateSlider);
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Check honeypot
+            const honeypot = document.getElementById('comments').value;
+            if (honeypot) {
+                return; // Bot submission, silently fail
+            }
+            
+            // Simulate form submission
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would normally send to a server
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            formSuccess.classList.remove('hidden');
+            contactForm.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                formSuccess.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    closeMobileMenuFn();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
