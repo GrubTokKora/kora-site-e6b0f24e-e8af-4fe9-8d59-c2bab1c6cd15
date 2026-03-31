@@ -269,6 +269,24 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
+        .service-card-panel {
+            transform: translateY(calc(100% - 84px));
+            transition: transform 0.5s ease;
+        }
+        .service-card:hover .service-card-panel,
+        .service-card:focus-within .service-card-panel {
+            transform: translateY(0);
+        }
+        .service-card-details {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+        .service-card:hover .service-card-details,
+        .service-card:focus-within .service-card-details {
+            opacity: 1;
+            transform: translateY(0);
+        }
         
         /* Custom scrollbar for testimonials */
         .testimonial-slider::-webkit-scrollbar {
@@ -460,88 +478,92 @@
                 <!-- Desktop Grid -->
                 <div class="hidden lg:grid grid-cols-2 gap-8">
                     <!-- Permanent Makeup -->
-                    <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg reveal">
-                        <div class="h-64 overflow-hidden">
-                            <img src="https://skinclinicny.com/wp-content/uploads/2024/10/Makeup-Model.jpg" alt="Permanent Makeup" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" width="800" height="600" loading="lazy" decoding="async">
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-playfair text-2xl font-bold text-black mb-4">Permanent Makeup</h3>
-                            <ul class="space-y-2 text-gray-600 font-open-sans mb-6">
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Eyebrows</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Eyeliner</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Lips</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>3D Areola Repigmentation</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Paramedical Tattooing</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Laser and Saline Tattoo Removal</li>
-                            </ul>
-                            <a href="https://skinclinicny.com/permanent-makeup/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
-                                Learn More
-                            </a>
+                    <div class="service-card group relative h-[430px] rounded-lg overflow-hidden shadow-lg reveal">
+                        <img src="https://skinclinicny.com/wp-content/uploads/2024/10/Makeup-Model.jpg" alt="Permanent Makeup" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" width="800" height="600" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent"></div>
+                        <div class="service-card-panel absolute inset-x-0 bottom-0 p-8 text-white">
+                            <h3 class="font-playfair text-2xl font-bold mb-4">Permanent Makeup</h3>
+                            <div class="service-card-details">
+                                <ul class="space-y-1.5 font-open-sans mb-6 text-white/90">
+                                    <li>• Eyebrows</li>
+                                    <li>• Eyeliner</li>
+                                    <li>• Lips</li>
+                                    <li>• 3D Areola Repigmentation</li>
+                                    <li>• Paramedical Tattooing</li>
+                                    <li>• Laser and Saline Tattoo Removal</li>
+                                </ul>
+                                <a href="https://skinclinicny.com/permanent-makeup/" class="inline-block bg-black/90 text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                                    Learn More
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Aesthetic Skincare -->
-                    <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg reveal" style="transition-delay: 100ms;">
-                        <div class="h-64 overflow-hidden">
-                            <img src="https://skinclinicny.com/wp-content/uploads/2024/10/skin-care.jpg" alt="Aesthetic Skincare" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" width="800" height="600" loading="lazy" decoding="async">
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-playfair text-2xl font-bold text-black mb-4">Aesthetic Skincare</h3>
-                            <ul class="space-y-2 text-gray-600 font-open-sans mb-6">
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Skincare Facials</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Face & Body Waxing</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Precision Brow Shaping & Tinting</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Eyelash Extensions</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Lash Lift & Tint</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Brow Lamination</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Makeup Services</li>
-                            </ul>
-                            <a href="https://skinclinicny.com/aesthetics-skincare/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
-                                Learn More
-                            </a>
+                    <div class="service-card group relative h-[430px] rounded-lg overflow-hidden shadow-lg reveal" style="transition-delay: 100ms;">
+                        <img src="https://skinclinicny.com/wp-content/uploads/2024/10/skin-care.jpg" alt="Aesthetic Skincare" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" width="800" height="600" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent"></div>
+                        <div class="service-card-panel absolute inset-x-0 bottom-0 p-8 text-white">
+                            <h3 class="font-playfair text-2xl font-bold mb-4">Aesthetic Skincare</h3>
+                            <div class="service-card-details">
+                                <ul class="space-y-1.5 font-open-sans mb-6 text-white/90">
+                                    <li>• Skincare Facials</li>
+                                    <li>• Face & Body Waxing</li>
+                                    <li>• Precision Brow Shaping & Tinting</li>
+                                    <li>• Eyelash Extensions</li>
+                                    <li>• Lash Lift & Tint</li>
+                                    <li>• Brow Lamination</li>
+                                    <li>• Makeup Services</li>
+                                </ul>
+                                <a href="https://skinclinicny.com/aesthetics-skincare/" class="inline-block bg-black/90 text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                                    Learn More
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Medspa Services -->
-                    <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg reveal" style="transition-delay: 200ms;">
-                        <div class="h-64 overflow-hidden">
-                            <img src="https://skinclinicny.com/wp-content/uploads/2024/10/medical_spa.webp" alt="Medspa Services" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" width="800" height="600" loading="lazy" decoding="async">
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-playfair text-2xl font-bold text-black mb-4">Medspa Services</h3>
-                            <ul class="space-y-2 text-gray-600 font-open-sans mb-6">
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Botox</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Fillers</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Laser Services</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Sclero Therapy (Spider Vein Reduction)</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Vivace RF Microneedling</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>IPL Photo Facials</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Chemical Peels</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>PDO Threads</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>PRP for Face & Hair</li>
-                            </ul>
-                            <a href="https://skinclinicny.com/medspa-services" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
-                                Learn More
-                            </a>
+                    <div class="service-card group relative h-[430px] rounded-lg overflow-hidden shadow-lg reveal" style="transition-delay: 200ms;">
+                        <img src="https://skinclinicny.com/wp-content/uploads/2024/10/medical_spa.webp" alt="Medspa Services" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" width="800" height="600" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent"></div>
+                        <div class="service-card-panel absolute inset-x-0 bottom-0 p-8 text-white">
+                            <h3 class="font-playfair text-2xl font-bold mb-4">Medspa Services</h3>
+                            <div class="service-card-details">
+                                <ul class="space-y-1.5 font-open-sans mb-6 text-white/90">
+                                    <li>• Botox</li>
+                                    <li>• Fillers</li>
+                                    <li>• Laser Services</li>
+                                    <li>• Sclero Therapy (Spider Vein Reduction)</li>
+                                    <li>• Vivace RF Microneedling</li>
+                                    <li>• IPL Photo Facials</li>
+                                    <li>• Chemical Peels</li>
+                                    <li>• PDO Threads</li>
+                                    <li>• PRP for Face & Hair</li>
+                                </ul>
+                                <a href="https://skinclinicny.com/medspa-services" class="inline-block bg-black/90 text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                                    Learn More
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Laser Services -->
-                    <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg reveal" style="transition-delay: 300ms;">
-                        <div class="h-64 overflow-hidden">
-                            <img src="https://skinclinicny.com/wp-content/uploads/2024/10/2595833.webp" alt="Laser Services" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" width="800" height="600" loading="lazy" decoding="async">
-                        </div>
-                        <div class="p-8">
-                            <h3 class="font-playfair text-2xl font-bold text-black mb-4">Laser Services</h3>
-                            <ul class="space-y-2 text-gray-600 font-open-sans mb-6">
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Laser Hair Removal</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Photo Facials</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Laser Tattoo Removal</li>
-                                <li class="flex items-center"><span class="text-brand-gold mr-2">•</span>Non Ablative Skin Resurfacing</li>
-                            </ul>
-                            <a href="https://skinclinicny.com/laser-services/" class="inline-block bg-black text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
-                                Learn More
-                            </a>
+                    <div class="service-card group relative h-[430px] rounded-lg overflow-hidden shadow-lg reveal" style="transition-delay: 300ms;">
+                        <img src="https://skinclinicny.com/wp-content/uploads/2024/10/2595833.webp" alt="Laser Services" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" width="800" height="600" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent"></div>
+                        <div class="service-card-panel absolute inset-x-0 bottom-0 p-8 text-white">
+                            <h3 class="font-playfair text-2xl font-bold mb-4">Laser Services</h3>
+                            <div class="service-card-details">
+                                <ul class="space-y-1.5 font-open-sans mb-6 text-white/90">
+                                    <li>• Laser Hair Removal</li>
+                                    <li>• Photo Facials</li>
+                                    <li>• Laser Tattoo Removal</li>
+                                    <li>• Non Ablative Skin Resurfacing</li>
+                                </ul>
+                                <a href="https://skinclinicny.com/laser-services/" class="inline-block bg-black/90 text-white font-montserrat text-xs font-bold uppercase px-6 py-3 rounded hover:bg-brand-gold transition-colors">
+                                    Learn More
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
