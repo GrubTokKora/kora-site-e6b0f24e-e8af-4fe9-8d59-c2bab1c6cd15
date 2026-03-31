@@ -156,6 +156,13 @@
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
         }
+        #reviews-container {
+            touch-action: pan-y;
+            cursor: grab;
+        }
+        #reviews-container.is-dragging {
+            cursor: grabbing;
+        }
         
         .testimonial-slide {
             scroll-snap-align: center;
@@ -640,12 +647,12 @@
                     <h2 class="font-playfair text-4xl md:text-5xl font-bold text-black">Client Reviews</h2>
                 </div>
 
-                <div class="relative reveal pl-10 pr-10 sm:pl-12 sm:pr-12 lg:pl-14 lg:pr-14">
+                <div class="relative reveal px-2 md:pl-12 md:pr-12 lg:pl-14 lg:pr-14">
                     <!-- Navigation Buttons (inset on mobile so negative translate does not spill past viewport) -->
-                    <button id="prev-review" type="button" class="absolute left-0 sm:left-0 top-1/2 -translate-y-1/2 translate-x-0 sm:-translate-x-4 lg:-translate-x-8 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white border border-gray-200 rounded-full shadow-lg flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group" aria-label="Previous reviews">
+                    <button id="prev-review" type="button" class="hidden md:flex absolute left-0 sm:left-0 top-1/2 -translate-y-1/2 translate-x-0 sm:-translate-x-4 lg:-translate-x-8 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white border border-gray-200 rounded-full shadow-lg items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group" aria-label="Previous reviews">
                         <svg class="w-5 h-5 text-black group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     </button>
-                    <button id="next-review" type="button" class="absolute right-0 sm:right-0 top-1/2 -translate-y-1/2 translate-x-0 sm:translate-x-4 lg:translate-x-8 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white border border-gray-200 rounded-full shadow-lg flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group" aria-label="Next reviews">
+                    <button id="next-review" type="button" class="hidden md:flex absolute right-0 sm:right-0 top-1/2 -translate-y-1/2 translate-x-0 sm:translate-x-4 lg:translate-x-8 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white border border-gray-200 rounded-full shadow-lg items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group" aria-label="Next reviews">
                         <svg class="w-5 h-5 text-black group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </button>
 
@@ -653,7 +660,7 @@
                     <div id="reviews-container" class="overflow-hidden min-w-0">
                         <div id="reviews-track" class="flex transition-transform duration-500 ease-out">
                             <!-- Review 1 -->
-                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 md:px-4">
                                 <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800 break-words">
                                     <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
                                     <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">All I can say is AMAZING! Every visit I received a very warm welcome to a very clean and inviting place. Maria is well versed in her craft; she took the time to explain the entire process as well as informing me throughout the entire process what she was doing next. I never thought my brows, eyeliner and lips would look this good and last as long as they did. I highly recommend Maria, she's truly good at what she does and made my entire experience relaxing. Maria is just so kind and nice to talk to on top of her skill!</p>
@@ -662,7 +669,7 @@
                             </div>
 
                             <!-- Review 2 -->
-                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 md:px-4">
                                 <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800 break-words">
                                     <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
                                     <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">I'm so happy with the results of my brows and eyeliner! Maria is professional, explained each step, and extremely talented. I was referred to her by many women from a local FB page and was not disappointed one bit. Thank you for making me feel happy and smile when I see myself in the mirror.</p>
@@ -671,7 +678,7 @@
                             </div>
 
                             <!-- Review 3 -->
-                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 md:px-4">
                                 <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800 break-words">
                                     <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
                                     <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">Yes, Advanced Aesthetic Solutions is As good as it gets! From my first visit I knew Maria was what I was looking for to take care of my skin. I am planning to get "Younger Together" Her knowledge of skin care has lead to compliments from my friends on how great my skin looks. Looking to make a change? Then give her a chance to help.</p>
@@ -680,7 +687,7 @@
                             </div>
 
                             <!-- Review 4 -->
-                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 md:px-4">
                                 <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800 break-words">
                                     <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
                                     <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">I highly recommend AAS -owner Maria-. I signed up for the facial sculpt and definately notice an improvement in the way my skin and jawline/neck look. The treatment is painless and relaxing. Maria is pleasant and professional. It is easy to get to with good parking. So do something for yourself. You deserve it.</p>
@@ -689,7 +696,7 @@
                             </div>
 
                             <!-- Review 5 -->
-                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 md:px-4">
                                 <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800 break-words">
                                     <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
                                     <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">Absolutely fantastic!! Maria is of the most knowledgeable skincare professionals I have ever met, and I have been everywhere. She is so nice and personable, and did a great job taking care of my girlfriend and I. We have been using her services several months now and both have gotten several compliments from friends and family. Not to mention, with the insane prices people have tried to charge us in the past for similar services, Maria's prices are fair and she goes the extra mile to make sure we are happy with every service. She is the absolute best!!!</p>
@@ -698,7 +705,7 @@
                             </div>
 
                             <!-- Review 6 -->
-                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 md:px-4">
                                 <div class="bg-black text-white p-8 rounded-lg h-full border border-gray-800 break-words">
                                     <div class="text-brand-gold text-4xl font-serif mb-4">"</div>
                                     <p class="text-gray-300 font-open-sans leading-relaxed mb-6 text-sm">Maria, the owner of Advanced Aesthetic Solutions, did wonders in tightening my neck, and I highly recommend her for relaxing and successful treatments that make your skin look visibly better.</p>
@@ -708,14 +715,14 @@
                         </div>
                     </div>
 
-                    <!-- Dots Indicator -->
-                    <div class="flex justify-center gap-2 mt-8">
-                        <button class="review-dot w-3 h-3 rounded-full bg-brand-gold transition-all" data-index="0"></button>
-                        <button class="review-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-gold/50 transition-all" data-index="1"></button>
-                        <button class="review-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-gold/50 transition-all" data-index="2"></button>
-                        <button class="review-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-gold/50 transition-all" data-index="3"></button>
-                        <button class="review-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-gold/50 transition-all" data-index="4"></button>
-                        <button class="review-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-brand-gold/50 transition-all" data-index="5"></button>
+                    <!-- Mobile Navigation Buttons -->
+                    <div class="md:hidden flex items-center justify-center gap-4 mt-6">
+                        <button id="prev-review-mobile" type="button" class="w-11 h-11 bg-white border border-gray-200 rounded-full shadow-lg flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group" aria-label="Previous reviews">
+                            <svg class="w-5 h-5 text-black group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button id="next-review-mobile" type="button" class="w-11 h-11 bg-white border border-gray-200 rounded-full shadow-lg flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-white transition-all group" aria-label="Next reviews">
+                            <svg class="w-5 h-5 text-black group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1035,10 +1042,16 @@
         });
 
         // Reviews Slider
+        const reviewsContainer = document.getElementById('reviews-container');
         const reviewsTrack = document.getElementById('reviews-track');
-        const prevReview = document.getElementById('prev-review');
-        const nextReview = document.getElementById('next-review');
-        const reviewDots = document.querySelectorAll('.review-dot');
+        const prevReviewButtons = [
+            document.getElementById('prev-review'),
+            document.getElementById('prev-review-mobile')
+        ].filter(Boolean);
+        const nextReviewButtons = [
+            document.getElementById('next-review'),
+            document.getElementById('next-review-mobile')
+        ].filter(Boolean);
         let currentReview = 0;
         const totalReviews = 6;
         
@@ -1052,37 +1065,67 @@
             const slidesPerView = getSlidesPerView();
             const slideWidth = 100 / slidesPerView;
             reviewsTrack.style.transform = `translateX(-${currentReview * slideWidth}%)`;
-            
-            reviewDots.forEach((dot, index) => {
-                if (index === currentReview) {
-                    dot.classList.remove('bg-gray-300');
-                    dot.classList.add('bg-brand-gold');
-                } else {
-                    dot.classList.add('bg-gray-300');
-                    dot.classList.remove('bg-brand-gold');
-                }
-            });
         }
 
-        prevReview.addEventListener('click', () => {
+        function goToPrevReview() {
             currentReview = currentReview > 0 ? currentReview - 1 : totalReviews - getSlidesPerView();
             updateSlider();
-        });
+        }
 
-        nextReview.addEventListener('click', () => {
+        function goToNextReview() {
             const slidesPerView = getSlidesPerView();
             currentReview = currentReview < totalReviews - slidesPerView ? currentReview + 1 : 0;
             updateSlider();
+        }
+        
+        prevReviewButtons.forEach((button) => {
+            button.addEventListener('click', goToPrevReview);
+        });
+        nextReviewButtons.forEach((button) => {
+            button.addEventListener('click', goToNextReview);
         });
 
-        reviewDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentReview = index;
-                updateSlider();
-            });
+        let dragStartX = 0;
+        let dragStartY = 0;
+        let isPointerDown = false;
+
+        function onReviewPointerDown(event) {
+            isPointerDown = true;
+            dragStartX = event.clientX;
+            dragStartY = event.clientY;
+            reviewsContainer.classList.add('is-dragging');
+        }
+
+        function onReviewPointerEnd(event) {
+            if (!isPointerDown) return;
+            isPointerDown = false;
+            reviewsContainer.classList.remove('is-dragging');
+
+            const deltaX = event.clientX - dragStartX;
+            const deltaY = event.clientY - dragStartY;
+            const swipeThreshold = 40;
+
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold) {
+                if (deltaX < 0) {
+                    goToNextReview();
+                } else {
+                    goToPrevReview();
+                }
+            }
+        }
+
+        reviewsContainer.addEventListener('pointerdown', onReviewPointerDown);
+        reviewsContainer.addEventListener('pointerup', onReviewPointerEnd);
+        reviewsContainer.addEventListener('pointercancel', () => {
+            isPointerDown = false;
+            reviewsContainer.classList.remove('is-dragging');
+        });
+        reviewsContainer.addEventListener('pointerleave', (event) => {
+            onReviewPointerEnd(event);
         });
 
         window.addEventListener('resize', updateSlider);
+        updateSlider();
 
         // Scroll reveal animation
         const revealElements = document.querySelectorAll('.reveal');
