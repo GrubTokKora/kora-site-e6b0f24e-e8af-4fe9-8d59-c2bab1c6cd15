@@ -71,6 +71,14 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        window.KORA_SITE_CONFIG = {
+            apiBaseUrl: "https://kora-agent.grubtok.com",
+            businessId: "e6b0f24e-e8af-4fe9-8d59-c2bab1c6cd15",
+            recaptchaSiteKey: "6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd"
+        };
+    </script>
     
     <script>
         tailwind.config = {
@@ -873,6 +881,17 @@
                         </div>
                         
                         <p class="text-xs text-gray-500 font-open-sans">* indicates required fields</p>
+
+                        <div id="form-recaptcha-wrap" class="pt-1">
+                            <div
+                                class="g-recaptcha"
+                                data-sitekey="6LfRt44sAAAAACVTvFvGjoufmEcZqZk_pT4T_5Xd"
+                            ></div>
+                        </div>
+
+                        <div id="form-error" class="hidden bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg font-open-sans text-sm">
+                            Please complete the form and try again.
+                        </div>
                         
                         <button type="submit" class="w-full bg-brand-gold text-white font-montserrat text-sm font-bold uppercase px-8 py-4 rounded-lg hover:bg-black transition-colors duration-300">
                             Send Message
@@ -1100,31 +1119,126 @@
         // Contact form handling
         const contactForm = document.getElementById('contact-form');
         const formSuccess = document.getElementById('form-success');
+        const formError = document.getElementById('form-error');
+        const contactSubmitButton = contactForm.querySelector('button[type="submit"]');
 
-        contactForm.addEventListener('submit', (e) => {
+        function setFormMessage(element, message) {
+            if (!element) return;
+            element.textContent = message;
+            element.classList.remove('hidden');
+        }
+
+        function hideFormMessage(element) {
+            if (!element) return;
+            element.classList.add('hidden');
+            element.textContent = '';
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            hideFormMessage(formSuccess);
+            hideFormMessage(formError);
             
-            // Check honeypot
             const honeypot = document.getElementById('comments').value;
             if (honeypot) {
-                return; // Bot submission, silently fail
+                return;
             }
-            
-            // Simulate form submission
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            // Here you would normally send to a server
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            formSuccess.classList.remove('hidden');
-            contactForm.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                formSuccess.classList.add('hidden');
-            }, 5000);
+
+            const cfg = window.KORA_SITE_CONFIG || {};
+            const apiBaseUrl = (cfg.apiBaseUrl || '').replace(/\/+$/, '');
+            const businessId = (cfg.businessId || '').trim();
+            const recaptchaSiteKey = (cfg.recaptchaSiteKey || '').trim();
+
+            const name = (document.getElementById('name').value || '').trim();
+            const phone = (document.getElementById('phone').value || '').trim();
+            const email = (document.getElementById('email').value || '').trim();
+            const message = (document.getElementById('message').value || '').trim();
+
+            if (!name) {
+                setFormMessage(formError, 'Please enter your name.');
+                return;
+            }
+
+            if (!email || !isValidEmail(email)) {
+                setFormMessage(formError, 'Please enter a valid email address.');
+                return;
+            }
+
+            if (!message) {
+                setFormMessage(formError, 'Please enter your message.');
+                return;
+            }
+
+            if (!apiBaseUrl || !businessId || !recaptchaSiteKey) {
+                setFormMessage(formError, 'Form temporarily unavailable. Please call us directly.');
+                return;
+            }
+
+            if (typeof grecaptcha === 'undefined') {
+                setFormMessage(formError, 'Form security is still loading. Please try again in a moment.');
+                return;
+            }
+
+            const captchaToken = grecaptcha.getResponse();
+            if (!captchaToken) {
+                setFormMessage(formError, 'Please complete the security check.');
+                return;
+            }
+
+            const originalButtonText = contactSubmitButton.textContent;
+            contactSubmitButton.disabled = true;
+            contactSubmitButton.textContent = 'Sending...';
+
+            try {
+                const response = await fetch(apiBaseUrl + '/api/v1/public/forms/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        business_id: businessId,
+                        form_type: 'contact',
+                        form_data: {
+                            name,
+                            phone,
+                            email,
+                            message
+                        },
+                        submitter_email: email || null,
+                        captcha_token: captchaToken
+                    })
+                });
+
+                const payload = await response.json().catch(() => ({}));
+
+                if (!response.ok) {
+                    console.error('Contact form submission failed:', payload);
+                    setFormMessage(
+                        formError,
+                        payload.detail || payload.message || 'Something went wrong. Please try again or call us directly.'
+                    );
+                    return;
+                }
+
+                contactForm.reset();
+                setFormMessage(formSuccess, payload.message || 'Thank you! Your message has been sent successfully.');
+                setTimeout(() => {
+                    hideFormMessage(formSuccess);
+                }, 5000);
+            } catch (error) {
+                console.error('Contact form request error:', error);
+                setFormMessage(formError, 'Unable to send your message right now. Please try again later.');
+            } finally {
+                if (typeof grecaptcha !== 'undefined') {
+                    grecaptcha.reset();
+                }
+                contactSubmitButton.disabled = false;
+                contactSubmitButton.textContent = originalButtonText;
+            }
         });
 
         // Smooth scroll for anchor links
