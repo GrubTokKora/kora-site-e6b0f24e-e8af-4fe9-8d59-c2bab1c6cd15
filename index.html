@@ -112,6 +112,11 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+        @media (max-width: 767px) {
+            .hero-bg {
+                background-position: 83% 8%;
+            }
+        }
         
         .sparkles-overlay {
             background-image: url('https://skinclinicny.com/wp-content/uploads/2024/11/Sparkles-back2.png');
@@ -340,7 +345,7 @@
 
                 <!-- Mobile Menu Button -->
                 <div id="header-mobile-actions" class="lg:hidden flex items-center space-x-4 ml-auto">
-                    <button id="mobile-menu-btn" class="text-white hover:text-brand-gold transition-colors">
+                    <button id="mobile-menu-btn" class="w-10 h-10 rounded-full bg-[#f2e8e6] text-[#5e5e5e] hover:bg-white transition-colors flex items-center justify-center shadow-sm">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </button>
                 </div>
@@ -390,7 +395,7 @@
 
     <main id="main-content" class="w-full max-w-[100vw] min-w-0 overflow-x-hidden">
         <!-- Hero Section -->
-        <section id="home" class="relative min-h-screen hero-bg flex items-center justify-center md:items-end md:justify-start pt-[120px] pb-16 md:pb-12 lg:pb-16 overflow-x-hidden">
+        <section id="home" class="relative min-h-screen hero-bg flex items-end justify-center md:items-end md:justify-start pt-[120px] pb-16 md:pb-12 lg:pb-16 overflow-x-hidden">
             <div class="relative z-10 w-full max-w-5xl px-4 sm:px-6 lg:px-10 xl:px-14 text-center md:text-left mx-auto md:mx-0 md:ml-6 lg:ml-10 xl:ml-14 md:mb-10 lg:mb-14">
                 <p class="text-brand-gold-dark font-montserrat text-sm md:text-base font-medium tracking-[0.2em] uppercase mb-4 reveal">World Class</p>
                 <h1 class="font-playfair text-4xl md:text-5xl lg:text-[50px] font-bold text-white leading-tight mb-4 reveal" style="transition-delay: 100ms;">
@@ -400,7 +405,7 @@
                     In <span class="text-black bg-white/90 px-2 py-1 font-bold">Tuckahoe, NY</span>
                 </p>
                 
-                <div class="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4 mt-10 reveal" style="transition-delay: 300ms;">
+                <div class="hidden md:flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4 mt-10 reveal" style="transition-delay: 300ms;">
                     <a href="#contact" class="bg-brand-gold text-white font-montserrat text-sm font-bold uppercase px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                         Consultation
                     </a>
