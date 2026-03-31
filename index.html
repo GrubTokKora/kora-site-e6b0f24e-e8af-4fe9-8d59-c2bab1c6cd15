@@ -132,6 +132,13 @@
             background-position: center;
         }
         
+        .welcome-bg {
+            background-image: url('https://skinclinicny.com/wp-content/uploads/2024/11/Sparkles-back2.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
         /* FAQ Accordion styles */
         .faq-content {
             max-height: 0;
@@ -339,11 +346,6 @@
 </head>
 <body class="font-open-sans text-gray-800 antialiased overflow-x-hidden w-full max-w-[100vw] min-w-0">
 
-    <!-- Skip to main content -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-black text-white px-4 py-2 z-[999999]">
-        Skip to main content
-    </a>
-
     <!-- Header -->
     <header id="header" class="fixed left-0 right-0 z-[10001] w-full max-w-[100vw]">
         <div class="px-4 sm:px-6 lg:px-8 xl:px-12 py-6 lg:py-4 min-w-0">
@@ -355,7 +357,6 @@
 
                 <!-- Desktop Navigation -->
                 <nav id="header-nav-desktop" class="hidden lg:flex flex-1 min-w-0 justify-center items-center flex-wrap gap-x-6 gap-y-2">
-                    <a href="/" class="text-white font-montserrat font-semibold hover:text-brand-gold transition-colors">Home</a>
                     <a href="#about" class="text-white font-montserrat font-semibold hover:text-brand-gold transition-colors">About</a>
                     <a href="#reviews" class="text-white font-montserrat font-semibold hover:text-brand-gold transition-colors">Reviews</a>
                     <a href="#faq" class="text-white font-montserrat font-semibold hover:text-brand-gold transition-colors">FAQ</a>
@@ -436,14 +437,14 @@
         </section>
 
         <!-- Welcome/Intro Section -->
-        <section id="about" class="py-20 lg:py-28 bg-white overflow-x-hidden min-w-0">
+        <section id="about" class="py-20 lg:py-28 bg-white welcome-bg overflow-x-hidden min-w-0">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-w-0">
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center text-center">
                     <div class="reveal">
-                        <p class="text-brand-warm font-baskervville text-2xl md:text-3xl italic mb-2">Welcome To</p>
-                        <h2 class="font-corinthia text-5xl md:text-6xl lg:text-7xl text-black mb-8">Skin Clinic</h2>
+                        <p class="text-brand-warm font-baskervville text-2xl md:text-4xl italic mb-2">Welcome To</p>
+                        <h2 class="font-corinthia font-medium text-5xl md:text-6xl lg:text-[6rem] text-black mb-8">Skin Clinic</h2>
                         
-                        <div class="space-y-6 text-gray-600 font-open-sans leading-relaxed">
+                        <div class="space-y-6 text-gray-600 font-open-sans leading-relaxed md:text-lg">
                             <p>Welcome to Skin Clinic NY, where artistry meets precision in the world of permanent makeup. We're thrilled to introduce you to our range of transformative beauty solutions, including our signature microblading service.</p>
                             
                             <p>At Skin Clinic NY, we believe that everyone deserves to feel confident and beautiful every day. Our team of certified and licensed artists specializes in enhancing your natural features with cutting-edge permanent makeup techniques. From perfectly shaped eyebrows to subtly enhanced lips and eyes, we're here to help you achieve the look you've always dreamed of.</p>
@@ -860,7 +861,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 lg:py-0 bg-white overflow-x-hidden min-w-0">
+        <section id="contact" class="lg:py-0 bg-white overflow-x-hidden min-w-0">
             <div class="grid lg:grid-cols-2 min-w-0">
                 <!-- Contact Form -->
                 <div class="px-4 sm:px-6 lg:px-12 xl:px-20 py-16 lg:py-28 reveal min-w-0">
